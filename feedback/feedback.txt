@@ -1,0 +1,10 @@
+Lab 4 - Stack Attack
+Khalil J
+
+Successful Exploits: 4/5
+
+Addresses should all be 8 bytes (some are specified in your exploits with fewer, which may work but only if you get lucky with the other uninitialized bytes being zero)
+
+Otherwise looks good!
+
+Score: 90/100

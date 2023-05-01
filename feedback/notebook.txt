@@ -1,0 +1,26 @@
+Exploit 1: Hiss
+This exploit required two parts, adding enough padding so that we can add an address
+and then the actual address of the hiss function. 24 padding bytes so the hiss 
+function address can be the return address.
+
+Exploit 2: Glow
+This step required a code injection attack where assembly instructions are added
+first (move ID code into rdi, then return) following by 16 padding bytes so
+the return address can be filled with the address to the start of the assembly
+instruction. That is followed by the address to the glow function.
+
+Exploit 3: Implode
+This follows a similar approach as the previous exploit, except converting the
+ID code to a string and overwriting addresses were new concerns here. The
+general approach was 16 padding bytes followed by assemby instructions (move
+string to rdi then return), the address of the injected code, the address of
+the implode function, 8 more padding bytes (the ID code was beign overwritten
+after fucntion calls), then the ID code translated through ASCII to its string
+representation in hex.
+
+Exploit 4: Glowbig
+The idea here was to use addresses to access helper functions, particularly for
+gadgets. There are 24 padding bytes, an address to a gadget that pops to rax,
+the ID code, another gadget address to move eax to edi, then the address to 
+the glow function. The challenge really is using addresses to access assembly
+instructions instead of having assembly injected.
